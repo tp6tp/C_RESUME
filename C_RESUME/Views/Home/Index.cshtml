@@ -1,8 +1,269 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<style>
+    .modal-content {
+        width: 900px;
+        margin-top: 200px;
+    }
+</style>
+<!-- ======= Hero Section ======= -->
+<div id="hero" class="hero route bg-image" style="background-image: url(/image/c.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="hero-content display-table">
+        <div class="table-cell">
+            <div class="container">
+                <!--<p class="display-6 color-d">Hello, world!</p>-->
+                <h1 class="hero-title mb-4">CHIEN-YU CHEN</h1>
+                <p class="hero-subtitle"><span class="typed" data-typed-items="Junior Programmer"></span></p>
+                <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+            </div>
+        </div>
+    </div>
+</div><!-- End Hero Section -->
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box-shadow-full">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-5">
+                                        <div class="about-img">
+                                            <img src="/image/me.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-7">
+                                        <div class="about-info">
+                                            <p><span class="title-s">Name: </span> <span>陳建宇</span></p>
+                                            <p><span class="title-s">Profile: </span> <span>全端工程師</span></p>
+                                            <p><span class="title-s">Email: </span> <span>tong963812@gmail.com</span></p>
+                                            <p><span class="title-s">Phone: </span> <span>(09)3903-2228</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-mf">
+                                    <p class="title-s">Skill</p>
+                                    <span>ASP.NET Core</span> <span class="pull-right">90%</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span>C#</span> <span class="pull-right">85%</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span>SQL Server</span> <span class="pull-right">70%</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span>HTML</span> <span class="pull-right">80%</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span>CSS3</span> <span class="pull-right">70%</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span>JAVASCRIPT</span> <span class="pull-right">85%</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span>JQUERY</span> <span class="pull-right">85%</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-me pt-4 pt-md-0">
+                                    <div class="title-box-2">
+                                        <h5 class="title-left">
+                                            About me
+                                        </h5>
+                                    </div>
+                                    <p class="lead">
+                                        我是陳建宇,畢業於正修科技大學的電子工程系,
+                                        個性上是偏內向的人,
+                                    </p>
+                                    <p class="lead">
+                                        2022年初,開始嘗試學習編程。
+                                        起初自然是挫折連連,不過每次感覺到自己進步或成長時的成就感和快樂驅使著繼續學習。持續半年多後, 便開始嘗試應徵相關工作。
+                                    </p>
+                                    <p class="lead">
+                                        我的第一份程式設計工作中主要是開發、維護公司內部MIS系統及部分客戶後台系統維護和新增功能,
+                                        負責專案過程中,偶爾會回去看之前撰寫的code有沒有優化的可能讓後續的維護或擴展方便。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End About Section -->
+    <!-- ======= Counter Section ======= -->
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(/image/back.jpg)">
+        
+    </div><!-- End Counter Section -->
+    <!-- ======= Portfolio Section ======= -->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            工作經歷
+                        </h3>
+                        <p class="subtitle-a">
+                            Project
+                        </p>
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="work-box">
+                        <div class="work-content">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2 class="w-title">兆葳科技股份有限公司</h2>
+                                    <div class="w-more">
+                                        <span class="w-date">July 2022</span> - <span class="w-date">October 2023</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="w-like">
+                                        <a class="jobexperi" id="_JobExperiCW"> <span class="bi bi-info-circle"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-md-4">
+                  <div class="work-box">
+                    <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                      <div class="work-img">
+                        <img src="assets/img/work-2.jpg" alt="" class="img-fluid">
+                      </div>
+                    </a>
+                    <div class="work-content">
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <h2 class="w-title">Loreda Cuno Nere</h2>
+                          <div class="w-more">
+                            <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="w-like">
+                            <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            作品集
+                        </h3>
+                        <p class="subtitle-a">
+                            Portfolio
+                        </p>
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                @* <div class="col-md-4">
+                    <div class="work-box">
+                        <a href="/image/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                            <div class="work-img">
+                                <img src="/image/work-4.jpg" alt="" class="img-fluid">
+                            </div>
+                        </a>
+                        <div class="work-content">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h2 class="w-title">Bindo Laro Cado</h2>
+                                    <div class="w-more">
+                                        <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="w-like">
+                                        <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> *@
+
+                <!-- <div class="col-md-4">
+                  <div class="work-box">
+                    <a href="assets/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                      <div class="work-img">
+                        <img src="assets/img/work-5.jpg" alt="" class="img-fluid">
+                      </div>
+                    </a>
+                    <div class="work-content">
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <h2 class="w-title">Studio Lena Mado</h2>
+                          <div class="w-more">
+                            <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="w-like">
+                            <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                
+            </div>
+        </div>
+    </section><!-- End Portfolio Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <div class="testimonials paralax-mf bg-image" style="background-image: url(/image/back.jpg)">
+        
+    </div><!-- End Testimonials Section -->
+</main><!-- End #main -->
+
+
+<!--ExperiModal-->
+<div class="modal fade" id="experimodal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg"> @* modal-dialog-scrollable *@
+        <div class="modal-content">
+        </div>
+    </div>
 </div>
+<!--ExperiModalEnd-->
+
+<script>
+    $(function () {
+        $(".jobexperi").on("click", function () {
+            let viewname = $(this)[0].id;
+            $("#experimodal .modal-content").load("@Url.Action("ViewJobExperi", "Home")", { viewName: viewname },
+                function () {
+                    $(".close").on("click", function () {
+                        $("#experimodal").modal("hide");
+                    })
+                });
+            $("#experimodal").modal("show");
+        })
+    })
+</script>

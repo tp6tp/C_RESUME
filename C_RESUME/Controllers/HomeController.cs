@@ -1,4 +1,5 @@
 ﻿using C_RESUME.Models;
+using C_RESUME_DTO.CommonDTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -17,10 +18,10 @@ namespace C_RESUME.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult ViewJobExperi(string viewName)
         {
-            return View();
+            return PartialView(viewName);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,13 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\C_RESUME.DTO\C_RESUME_DTO.csproj" />
+    <ProjectReference Include="..\C_RESUME_GenericRepository\C_RESUME_GenericRepository.csproj" />
   </ItemGroup>
 
 </Project>

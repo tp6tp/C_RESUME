@@ -1,0 +1,404 @@
+﻿@{
+    Layout = null;
+}
+@model C_RESUME_DTO.CommonDTO.SignDTO
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Signin CMS - C_RESUME</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/siginstyle/signin.css" rel="stylesheet" />
+    <style>
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+            background: #ffffff;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: none;
+            background: none;
+            font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+        }
+
+        .tip {
+            font-size: 20px;
+            margin: 40px auto 50px;
+            text-align: center;
+        }
+
+        .cont {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 900px;
+            height: 730px;
+            margin: 0 auto 100px;
+            background: #fff;
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.15), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
+        }
+
+        .form {
+            position: relative;
+            width: 640px;
+            height: 100%;
+            -webkit-transition: -webkit-transform 0.5s ease-in-out;
+            transition: -webkit-transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+            padding: 50px 30px 0;
+        }
+
+        .sub-cont {
+            overflow: hidden;
+            position: absolute;
+            left: 640px;
+            top: 0;
+            width: 900px;
+            height: 100%;
+            padding-left: 260px;
+            background: #fff;
+            -webkit-transition: -webkit-transform 0.5s ease-in-out;
+            transition: -webkit-transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+        }
+
+        .cont.s--signup .sub-cont {
+            -webkit-transform: translate3d(-640px, 0, 0);
+            transform: translate3d(-640px, 0, 0);
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            width: 260px;
+            height: 36px;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .img {
+            overflow: hidden;
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 260px;
+            height: 100%;
+            padding-top: 360px;
+        }
+
+        .img:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 900px;
+            height: 100%;
+            /* background-image: url("ext.jpg"); */
+            opacity: .8;
+            background-size: cover;
+            -webkit-transition: -webkit-transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+        }
+
+        .img:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .cont.s--signup .img:before {
+            -webkit-transform: translate3d(640px, 0, 0);
+            transform: translate3d(640px, 0, 0);
+        }
+
+        .img__text {
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 100%;
+            padding: 0 20px;
+            text-align: center;
+            color: #fff;
+            -webkit-transition: -webkit-transform 0.5s ease-in-out;
+            transition: -webkit-transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+        }
+
+        .img__text h2 {
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .img__text p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .cont.s--signup .img__text.m--up {
+            -webkit-transform: translateX(520px);
+            transform: translateX(520px);
+        }
+
+        .img__text.m--in {
+            -webkit-transform: translateX(-520px);
+            transform: translateX(-520px);
+        }
+
+        .cont.s--signup .img__text.m--in {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        .img__btn {
+            overflow: hidden;
+            z-index: 2;
+            position: relative;
+            width: 100px;
+            height: 36px;
+            margin: 0 auto;
+            background: transparent;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .img__btn:after {
+            content: '';
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #fff;
+            border-radius: 30px;
+        }
+
+        .img__btn span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: -webkit-transform 0.5s;
+            transition: -webkit-transform 0.5s;
+            transition: transform 0.5s;
+            transition: transform 0.5s, -webkit-transform 0.5s;
+        }
+
+        .img__btn span.m--in {
+            -webkit-transform: translateY(-72px);
+            transform: translateY(-72px);
+        }
+
+        .cont.s--signup .img__btn span.m--in {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        .cont.s--signup .img__btn span.m--up {
+            -webkit-transform: translateY(72px);
+            transform: translateY(72px);
+        }
+
+        h2 {
+            width: 100%;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            width: 260px;
+            margin: 25px auto 0;
+            text-align: center;
+        }
+        /* label span {
+            font-size: 17px;
+            color: #8C8C8C ;
+            text-transform: uppercase;
+        } */
+        input {
+            display: block;
+            width: 100%;
+            margin-top: 5px;
+            padding-bottom: 5px;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+        .forgot-pass {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #cfcfcf;
+        }
+        .submit {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            background: #d4af7a;
+            text-transform: uppercase;
+        }
+        .sign-in {
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+            margin-top: 10%;
+        }
+        .cont.s--signup .sign-in {
+            -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transform: translate3d(640px, 0, 0);
+            transform: translate3d(640px, 0, 0);
+        }
+        .sign-up {
+            -webkit-transform: translate3d(-900px, 0, 0);
+            transform: translate3d(-900px, 0, 0);
+        }
+        .cont.s--signup .sign-up {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+    </style>
+  </head>
+
+<body class="text-center" style="background-color:#DFDFDF">
+    <br>
+    <br>
+    <div class="cont">
+        
+            @using (Html.BeginForm("Logins", "Home"))
+            {
+                <div class="form sign-in">
+                    <h2>Welcome!</h2>
+                    @Html.ValidationSummary(true)
+                    <label class="">
+                        <span>帳　  號</span>
+                        @Html.TextBoxFor(x => x.Account)
+                        @Html.ValidationMessageFor(x => x.Account, "", new{ @class="text-danger"})
+                    </label>
+                    <label>
+                        <span>密　  碼</span>
+                        @Html.TextBoxFor(x => x.Password)
+                        @Html.ValidationMessageFor(x => x.Password, "", new{ @class="text-danger"})
+                    </label>
+                    <p class="forgot-pass"><a href="#">Forgot password?</a></p>
+                    <button id="signin" type="submit" class="submit">Sign In</button>
+                </div>
+            }
+        
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                    <h3>沒有帳戶, 請註冊!</h3>
+                </div>
+                <div class="img__text m--in">
+
+                    <h3>已有帳戶直接登入即可</h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">註　冊</span>
+                    <span class="m--in">登　入</span>
+                </div>
+            </div>
+            @using (Html.BeginForm("", "Home"))
+            {
+                @Html.ValidationSummary(true)
+                <div class="form sign-up">
+                    <h2>建立您的帳戶</h2>
+                    <label>
+                        <span>帳戶名稱</span>
+                        @Html.TextBoxFor(x => x.reAccName)
+                        @Html.ValidationMessageFor(x => x.reAccName, "", new{ @class="text-danger"})
+                    </label>
+                    <label>
+                        <span>帳　  號</span>
+                        @Html.TextBoxFor(x => x.reAccount)
+                        @Html.ValidationMessageFor(x => x.reAccount, "", new{ @class="text-danger"})
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        @Html.TextBoxFor(x => x.reEmail)
+                        @Html.ValidationMessageFor(x => x.reEmail, "", new{ @class="text-danger"})
+                    </label>
+                    <label>
+                        <span>密　  碼</span>
+                        @Html.TextBoxFor(x => x.rePassword)
+                        @Html.ValidationMessageFor(x => x.rePassword, "", new{ @class="text-danger"})
+                    </label>
+                    <label>
+                        <span>確認密碼</span>
+                        @Html.TextBoxFor(x => x.reConfirmPassword)
+                        @Html.ValidationMessageFor(x => x.reConfirmPassword, "", new{ @class="text-danger"})
+                    </label>
+                    <button type="submit" class="submit" id="signup">Sign Up</button>
+                </div>
+            }
+            
+        </div>
+    </div>
+  </body>
+</html>
+
+<script>
+    document.querySelector('.img__btn').addEventListener('click', function () {
+        document.querySelector('.cont').classList.toggle('s--signup');
+    });
+    
+    // $("#signin").on("click", function () {
+    //     $.post("@Url.Action("Logins","Home")",
+    //         {
+    //             Account: $("#account").val(),
+    //             Password: $("#password").val()
+    //         }, function (e) {
+    //             console.log(e);
+    //         })
+    // })
+
+    $("#signup").on("click", function () {
+
+    })
+    
+</script>
