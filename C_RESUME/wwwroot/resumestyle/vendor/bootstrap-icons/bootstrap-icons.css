@@ -14,7 +14,7 @@ url("./fonts/bootstrap-icons.woff?2820a3852bdb9a5832199cc61cec4e65") format("wof
     font-display: block;
     font-family: "terminator";
     src: url("./fonts/terminator_w.woff") format('woff'),
-    url("fonts/terminator_r.ttf") format('truetype'); /* Safari, Android, iOS */
+    url("./fonts/terminator_r.ttf") format('truetype'); /* Safari, Android, iOS */
 }
 .bi::before,
 [class^="bi-"]::before,
