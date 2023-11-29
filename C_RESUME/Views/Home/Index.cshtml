@@ -1,7 +1,7 @@
 ﻿<style>
     .modal-content {
-        width: 900px;
-        margin-top: 200px;
+        width: 1000px;
+        margin-top: 100px;
     }
 </style>
 <!-- ======= Hero Section ======= -->
@@ -184,30 +184,30 @@
             </div>
             <div class="row">
 
-                @* <div class="col-md-4">
+                <div class="col-md-4">
                     <div class="work-box">
-                        <a href="/image/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                        <a href="/image/Cproject_trackspend_1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                             <div class="work-img">
-                                <img src="/image/work-4.jpg" alt="" class="img-fluid">
+                                <img src="~/image/Cproject_trackspend_1.jpg" alt="" class="img-fluid">
                             </div>
                         </a>
                         <div class="work-content">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h2 class="w-title">Bindo Laro Cado</h2>
+                                    <h2 class="w-title">實作_記帳功能</h2>
                                     <div class="w-more">
-                                        <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
+                                        <span class="w-ctegory">Web Design</span> / <span class="w-date">01 November. 2023</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="w-like">
-                                        <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
+                                        <a class="portfolio" id="_Cproject_trackspend"> <span class="bi bi-info-circle"></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> *@
+                </div>
 
                 <!-- <div class="col-md-4">
                   <div class="work-box">
@@ -252,6 +252,14 @@
     </div>
 </div>
 <!--ExperiModalEnd-->
+<!--PortfolioModal-->
+<div class="modal fade" id="portfoliomodal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">@* modal-dialog-scrollable *@
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!--ExperiModalEnd-->
 
 <script>
     $(function () {
@@ -264,6 +272,17 @@
                     })
                 });
             $("#experimodal").modal("show");
+        })
+
+        $(".portfolio").on("click", function () {
+            let viewname = $(this)[0].id;
+            $("#portfoliomodal .modal-content").load("@Url.Action("ViewPortfolio", "Home")", { viewName: viewname },
+                function () {
+                    $(".close").on("click", function () {
+                        $("#portfoliomodal").modal("hide");
+                    })
+                });
+            $("#portfoliomodal").modal("show");
         })
     })
 </script>
